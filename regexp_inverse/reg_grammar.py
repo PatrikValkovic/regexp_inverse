@@ -38,11 +38,17 @@ class Iterate(Nonterminal):
         for s in v:  # type: str
             for cur in range(i+1):
                 t = ''
-                for i in range(cur):
+                for j in range(cur):
                     t += s
                 ret.append(t)
             if f is not None:
-                ret.append(f)
+                t = ''
+                for j in range(i-1):
+                    t += s
+                t += f
+                for j in range(i-1):
+                    t += s
+                ret.append(t)
         return ret
 
 

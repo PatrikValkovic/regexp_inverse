@@ -13,7 +13,7 @@ from pyparsers import cyk
 from .reg_grammar import grammar
 
 
-def generate(expr, max_max_length=1024, iterations=8, fill=''):
+def generate(expr, max_length=1024, iterations=8, fill=None):
     ContextFree.remove_useless_symbols(grammar, transform_grammar=True)
     ContextFree.remove_rules_with_epsilon(grammar, transform_grammar=True)
     ContextFree.remove_unit_rules(grammar, transform_grammar=True)
@@ -26,5 +26,4 @@ def generate(expr, max_max_length=1024, iterations=8, fill=''):
     parsed = InverseContextFree.unit_rules_restore(parsed)
     parsed = InverseContextFree.epsilon_rules_restore(parsed)
 
-    for sentence in parsed.get():
-        print(sentence)
+    return parsed.get(max_length, iterations, fill)

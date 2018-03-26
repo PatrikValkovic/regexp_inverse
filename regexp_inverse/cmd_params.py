@@ -21,4 +21,4 @@ cmd_parser.add_option('-i', '--iterations',
 cmd_parser.add_option('-f', '--fill',
                       help='fill symbol in iterations',
                       type='string',
-                      default='')
+                      default=None)

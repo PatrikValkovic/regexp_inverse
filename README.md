@@ -2,8 +2,8 @@
 
 Application that generate strings based on regualar expression.
 
-----------
 
+```
 Usage: run.py [options] regular-expression
 
 Options:
@@ -13,5 +13,4 @@ Options:
   -i ITERATIONS, --iterations=ITERATIONS
                         max count of iterations
   -f FILL, --fill=FILL  fill symbol in iterations
-
-
+```

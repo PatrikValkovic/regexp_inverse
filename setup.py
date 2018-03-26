@@ -11,12 +11,12 @@ from setuptools import setup
 
 setup(
     name='regexp_inverse',
-    version='0.0.1',
+    version='1.0.0',
     packages=['regexp_inverse'],
-    # url='https://github.com/PatrikValkovic/grammpy',
+    url='https://github.com/PatrikValkovic/regexp_inverse',
     license='GNU General Public License v3.0',
     author='Patrik Valkovic',
-    # download_url='https://github.com/PatrikValkovic/grammpy/archive/v1.0.1.tar.gz',
+    download_url='https://github.com/PatrikValkovic/grammpy/archive/v1.0.0.tar.gz',
     author_email='patrik.valkovic@hotmail.cz',
     description='package that generates string based on the regular expression.',
     install_requires=['grammpy', 'grammpy-transforms', 'pyparsers'],

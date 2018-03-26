@@ -6,3 +6,7 @@
 Part of regexp-inverse
 
 """
+
+from .generate import generate
+from .cmd_params import cmd_parser
+from .reg_grammar import grammar

@@ -9,8 +9,6 @@ Part of regexp-inverse
 
 from string import ascii_lowercase
 from grammpy import *
-from grammpy_transforms import ContextFree, InverseContextFree
-from pyparsers import cyk
 
 
 class Symb(Nonterminal):

@@ -10,10 +10,6 @@ Part of regexp-inverse
 from optparse import OptionParser
 
 cmd_parser = OptionParser('usage: %prog [options] regular-expression')
-cmd_parser.add_option('-l', '--max-length',
-                      help='max length of generated strings',
-                      type='int',
-                      default=1024)
 cmd_parser.add_option('-i', '--iterations',
                       help='max count of iterations',
                       type='int',

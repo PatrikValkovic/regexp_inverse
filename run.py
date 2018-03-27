@@ -14,6 +14,6 @@ if __name__ == '__main__':
     if len(args) != 1:
         print('Invalid count of arguments')
         exit(1)
-    for sentence in generate(args[0], options.max_length, options.iterations, options.fill):
+    for sentence in generate(args[0], options.iterations, options.fill):
         print(sentence)
     exit(0)

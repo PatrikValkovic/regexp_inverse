@@ -12,28 +12,28 @@ from grammpy import *
 
 
 class Symb(Nonterminal):
-    def get(self, l, i, f):
+    def get(self, i, f):
         if len(self.to_rule.to_symbols) == 3:
-            return self.to_rule.to_symbols[1].get(l, i, f)
+            return self.to_rule.to_symbols[1].get(i, f)
         return [self.to_rule.to_symbols[0].s]
 
 class Concat(Nonterminal):
-    def get(self, l, i, f):
+    def get(self, i, f):
         if len(self.to_rule.to_symbols) == 1:
-            return self.to_rule.to_symbols[0].get(l, i, f)
+            return self.to_rule.to_symbols[0].get(i, f)
         new = []
-        left = self.to_rule.to_symbols[0].get(l, i, f)
-        right = self.to_rule.to_symbols[1].get(l, i, f)
+        left = self.to_rule.to_symbols[0].get(i, f)
+        right = self.to_rule.to_symbols[1].get(i, f)
         for l in left:
             for r in right:
                 new.append(l + r)
         return new
 
 class Iterate(Nonterminal):
-    def get(self, l, i, f):
+    def get(self, i, f):
         if len(self.to_rule.to_symbols) == 1:
-            return self.to_rule.to_symbols[0].get(l, i, f)
-        v = self.to_rule.to_symbols[0].get(l, i, f)
+            return self.to_rule.to_symbols[0].get(i, f)
+        v = self.to_rule.to_symbols[0].get(i, f)
         ret = []
         for s in v:  # type: str
             for cur in range(i+1):
@@ -53,11 +53,11 @@ class Iterate(Nonterminal):
 
 
 class Or(Nonterminal):
-    def get(self, l, i, f):
+    def get(self, i, f):
         if len(self.to_rule.to_symbols) == 1:
-            return self.to_rule.to_symbols[0].get(l, i, f)
-        l = self.to_rule.to_symbols[0].get(l, i, f)
-        r = self.to_rule.to_symbols[2].get(l, i, f)
+            return self.to_rule.to_symbols[0].get(i, f)
+        l = self.to_rule.to_symbols[0].get(i, f)
+        r = self.to_rule.to_symbols[2].get(i, f)
         return l+r
 
 

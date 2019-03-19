@@ -1,6 +1,6 @@
 # regexp_inverse
 
-Application that generate strings based on regualar expression.
+Application that generate strings based on regular expression.
 
 
 ```

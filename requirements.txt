@@ -1,0 +1,3 @@
+grammpy == 1.2.1
+grammpy-transforms == 1.2.4
+pyparsers == 0.0.2
